@@ -9,10 +9,11 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class Asset {
+
     @Id
-    @GeneratedValue(strategy= GeneratedType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String assetName;
