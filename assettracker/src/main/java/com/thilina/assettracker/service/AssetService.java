@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
-@Serivce
+@Service
 public class AssetService {
+
     private final AssetRepository assetRepository;
 
     public AssetService(AssetRepository assetRepository) {
@@ -27,7 +28,7 @@ public class AssetService {
         return assetRepository.findAll()
                 .stream()
                 .filter(a -> a.getNextServiceDate() != null &&
-                        a.getNextServuceDate().isBefore(LocalDate.now()))
+                        a.getNextServiceDate().isBefore(LocalDate.now()))
                 .toList();
     }
 }
